@@ -152,7 +152,8 @@ function cave() {
     }
     
     function monsterFightPartThree() {
-        alert("Monstret är trött och säger att den inte vill slåss mer. Monstret lovar att återvända till Goodbye World och aldrig mer försöka ta över Hello World. GRATTIS DU HAR KLARAT SPELET!")
+        alert("Monstret ger upp. Han vill inte slåss mer. Han säger att han ska flyga tillbaka till Goodbye World om du lovar att bli monstrets vän. För det är allt han vill, att ha en vän.")
+        friendlyMonster()
     }
     
     function calmTheMonster() {
