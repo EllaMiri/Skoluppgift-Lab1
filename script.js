@@ -96,13 +96,27 @@ function upstairs() {
 }
 
 function cave() {
-    alert("Det är mörkt och kallt när du beger dig in i grottan, men som tur har har du en ficklampa med dig. Du går allt längre in i grottan. Det är läskigt och du ser fladdermöss flyga omkring där inne.")
-    alert("Plötsligt ser du en staty mitt inne i grottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden...")
-    alert("Du går besviket ut ur grottan igen. Du måste hitta svärdet. Du går till skogen.")
-    forest();
+        alert("Det är mörkt och kallt när du beger dig in i grottan, men som tur har har du en ficklampa med dig. Du går allt längre in i grottan. Det är läskigt och du ser fladdermöss flyga omkring där inne.")
+        alert("Plötsligt ser du en staty mitt inne i grottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden...")
+        alert("Du går besviket ut ur grottan igen. Du måste hitta svärdet. Du går till skogen.")
+        forest();
     }
     function forest() {
-        alert("Du går in i skogen. Du ser ett hus framför dig. Du knackar på dörren.")
+            alert("Du går in i skogen. Du ser ett hus framför dig. Du knackar på dörren.")
             alert("En gubbe öppnar. Han frågar vad du vill och du svarar att du letar efter ett svärd och en sköld. Gubben säger att han nog har ett svärd hemma men han minns inte vart han lagt det... Du kan gärna leta här inne säger han.")
             insideHouse();
+    }
+
+    function goToCave() {
+        inventory.push("Sköld")
+        alert("Du är i grottan. Du använder svärdet för att skära i trät. Nu har du skölden också!")
+        let collectedAll = prompt("Ange inventory för att dubbelkolla att du har allt du behöver.")
+        if (collectedAll === "inventory") {
+            alert(inventory)
+            monsterFight()
+        }
+        else {
+            alert("Vänligen dubbelkolla att du har alla föremål du behöver")
+            goToCave();
+        }
     }
