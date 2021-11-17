@@ -120,3 +120,51 @@ function cave() {
             goToCave();
         }
     }
+
+    function monsterFight() {
+        let hitTheMonster = prompt("Du närmar dig monstret. Du hör det skrika. Plötsligt står du rakt framför det. Ange slå för att slå monsret")
+    
+        if (hitTheMonster === "slå") {
+            alert("Du slog monstret!")
+            monsterFightPartTwo()
+        }
+        else {
+            alert("Vänligen ange slå")
+        }
+    }
+    
+    function monsterFightPartTwo() {
+        let blockTheMonster = prompt("Monstret försöker slå dig! Ange blockera för att blockera monstrets slag eller ange slå för att slå istället.")
+    
+        if (blockTheMonster === "blockera") {
+            alert("Du blockerade monstrets slag!")
+            monsterFightPartThree()
+        }
+        else if (blockTheMonster === "slå") {
+            inventory.pop("Svärd")
+            alert("Du försökte slå monstret. Men monstret slog dig först, du ramlar till marken. Du ser inte så bra för du är yr, men du märker att du tappat något.")
+            calmTheMonster()
+        }
+        else {
+            alert("Vänligen ange blockera eller slå")
+            monsterFightPartTwo()
+        }
+    }
+    
+    function monsterFightPartThree() {
+        alert("Monstret är trött och säger att den inte vill slåss mer. Monstret lovar att återvända till Goodbye World och aldrig mer försöka ta över Hello World. GRATTIS DU HAR KLARAT SPELET!")
+    }
+    
+    function calmTheMonster() {
+        let checkInventory = prompt("Ange inventory för att se vad du tappat")
+    
+        if (checkInventory === "inventory") {
+            alert(inventory)
+            alert("Du har tappat skölden. Monstret ser det.")
+            monsterFightPartThree()
+        }
+        else {
+            alert("Vänligen ange inventory")
+            calmTheMonster()
+        }
+    }
