@@ -160,11 +160,25 @@ function cave() {
     
         if (checkInventory === "inventory") {
             alert(inventory)
-            alert("Du har tappat skölden. Monstret ser det.")
-            monsterFightPartThree()
+            alert("Du har tappat skölden. Monstret ser det. Men monstret slår dig inte igen.")
+            alert("Monstret säger att han inte vill slåss och att han kom till Hello World för att han inte passade in i Goodbye World. Monstret vill bli din vän.")
+            friendlyMonster();
         }
         else {
             alert("Vänligen ange inventory")
             calmTheMonster()
+        }
+    }
+
+    function friendlyMonster() {
+        let beFriends = prompt("Vill du bli monstrets vän? Ange ja eller nej")
+
+        if (beFriends === "ja") {
+            alert("Du är nu vän med monstret!")
+            alert("GRATTIS DU HAR HJÄLPT MONSTRET ATT HITTA EN VÄN! DU HAR KLARAT SPELET!")
+        }
+        else if (beFriends === "nej") {
+            alert("Monstret tittar ledset på dig. Monstret säger att han borde bege sig tillbaka till Goodbye World. Monstret fäller ut sina vingar och flyger iväg.")
+            alert("GRATTIS DU HAR BEKÄMPAT MONSTRET OCH KLARAT SPELET!")
         }
     }
