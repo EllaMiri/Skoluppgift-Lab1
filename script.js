@@ -16,3 +16,18 @@ function run() {
     alert("För att bekämpa monstret måste du ha ett svärd och en sköld. Dessa hittar du genom att utforska världen. Lycka till!")
     firstStage();
 }
+
+function firstStage() {
+    let firstStep = prompt("Vart vill du börja leta? Ange skogen eller grottan")
+
+    if (firstStep === "skogen") {
+        forest();
+    }
+    else if (firstStep === "grottan") {
+        cave();
+    }
+    else {
+        alert("Vänligen ange skogen eller grottan")
+        firstStage()
+    }
+}
