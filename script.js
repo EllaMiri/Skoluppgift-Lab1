@@ -66,7 +66,7 @@ function upstairs() {
         }
         else if (whereNext === "fight") {
             alert("Oops, du har ju inte skölden än... Du måste hämta den först. Klicka ok för att gå till grottan.")
-            goToCave()
+            goToCave();
         }
         else {
             alert("Vänligen ange fight eller grottan")
@@ -109,8 +109,8 @@ function cave() {
 
     function goToCave() {
         inventory.push("Sköld")
-        alert("Du är i grottan. Du använder svärdet för att skära i trät. Nu har du skölden också!")
-        let collectedAll = prompt("Ange inventory för att dubbelkolla att du har allt du behöver.")
+        alert("Du går till grottan. Plötsligt ser du en staty mitt inne i grottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden... Som tur är har du hittat svärdet så du använder det för att skära i trät och du har nu skölden också.")
+        let collectedAll = prompt("Det är dags att bege dig mot monstret. Ange inventory för att dubbelkolla att du har allt du behöver.")
         if (collectedAll === "inventory") {
             alert(inventory)
             monsterFight()
@@ -122,7 +122,7 @@ function cave() {
     }
 
     function monsterFight() {
-        let hitTheMonster = prompt("Du närmar dig monstret. Du hör det skrika. Plötsligt står du rakt framför det. Ange slå för att slå monsret")
+        let hitTheMonster = prompt("Du närmar dig monstret. Du hör det skrika. Plötsligt står du rakt framför det. Ange slå för att slå monstret")
     
         if (hitTheMonster === "slå") {
             alert("Du slog monstret!")
@@ -176,7 +176,7 @@ function cave() {
 
         if (beFriends === "ja") {
             alert("Du är nu vän med monstret!")
-            alert("GRATTIS DU HAR HJÄLPT MONSTRET ATT HITTA EN VÄN! DU HAR KLARAT SPELET!")
+            alert("GRATTIS DU HAR HJÄLPT MONSTRET ATT HITTA EN VÄN OCH SAMTIDIGT FÖRT BORT DET! DU HAR KLARAT SPELET!")
         }
         else if (beFriends === "nej") {
             alert("Monstret tittar ledset på dig. Monstret säger att han borde bege sig tillbaka till Goodbye World. Monstret fäller ut sina vingar och flyger iväg.")
