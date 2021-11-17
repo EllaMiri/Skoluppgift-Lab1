@@ -15,7 +15,7 @@ function firstStage() {
     let firstStep = prompt("Vart vill du börja leta? Ange skogen eller grottan")
 
     if (firstStep === "skogen") {
-        forest();
+        forestFirstTime();
     }
     else if (firstStep === "grottan") {
         cave();
@@ -26,13 +26,13 @@ function firstStage() {
     }
 }
 
-function forest() {
+function forestFirstTime() {
     alert("Du går in i skogen. Du ser ett hus framför dig. Du knackar på dörren.")
-        alert("En gubbe öppnar. Han frågar vad du vill och du svarar att du letar efter ett svärd, en sköld och en hjälm. Gubben säger att han nog har ett svärd hemma men han minns inte vart han lagt det... Du kan gärna leta här inne säger han.")
-        insideHouse();
+        alert("En gubbe öppnar. Han frågar vad du vill och du svarar att du letar efter ett svärd och en sköld. Gubben säger att han nog har ett svärd hemma men han minns inte vart han lagt det... Du kan gärna leta här inne säger han.")
+        insideHouseFirstTime();
 }
 
-function insideHouse() {
+function insideHouseFirstTime() {
     let openChest = prompt("I hallen ser du en kista. Vill du öppna den? Ange ja eller nej")
     if (openChest === "ja") {
         alert("Kistan är tom.. Leta vidare")
@@ -42,12 +42,27 @@ function insideHouse() {
     }
     else {
         alert("Vänligen ange ja eller nej")
-        insideHouse()
+        insideHouseFirstTime()
     }
-    upstairs()
+    upstairsFirstTime()
 }
 
-function upstairs() {
+function insideHouseSecondTime() {
+    let openChest = prompt("I hallen ser du en kista. Vill du öppna den? Ange ja eller nej")
+    if (openChest === "ja") {
+        alert("Kistan är tom.. Leta vidare")
+    }
+    else if (openChest === "nej"){
+        alert("Du letar vidare")
+    }
+    else {
+        alert("Vänligen ange ja eller nej")
+        insideHouseSecondTime()
+    }
+    upstairsSecondTime()
+}
+
+function upstairsFirstTime() {
     let openWardrobe = prompt("Du ser en trappa. Du går upp på övervåningen. Där uppe i ett av rummen ser du en garderob. Vill du öppna den? Ange ja eller nej.")
     
     if (openWardrobe === "ja") {
@@ -56,15 +71,15 @@ function upstairs() {
         let whereNext = prompt("Vart vill du gå nu? Ange fight för att gå och bekämpa monstret eller grottan för att gå till grottan")
 
         if (whereNext === "grottan"){
-            goToCave();
+            goToCaveFirstTime();
         }
         else if (whereNext === "fight") {
             alert("Oops, du har ju inte skölden än... Du måste hämta den först. Klicka ok för att gå till grottan.")
-            goToCave();
+            goToCaveFirstTime();
         }
         else {
             alert("Vänligen ange fight eller grottan")
-            upstairs()
+            upstairsFirstTime()
         }
         
     }
@@ -74,36 +89,86 @@ function upstairs() {
         let whereNext = prompt("Vart vill du gå nu? Ange fight för att gå och bekämpa monstret eller grottan för att gå till grottan")
 
         if (whereNext === "grottan"){
-            goToCave();
+            goToCaveFirstTime();
         }
         else if (whereNext === "fight") {
             alert("Oops, du har ju inte skölden än... Du måste hämta den först. Klicka ok för att gå till grottan.")
-            goToCave()
+            goToCaveFirstTime()
         }
         else {
             alert("Vänligen ange fight eller grottan")
-            upstairs()
+            upstairsFirstTime()
         }
 
+    }
+    else {
+        alert("Vänligen ange ja eller nej")
+        upstairsFirstTime()
+    }
+    
+}
+
+function upstairsSecondTime() {
+    let openWardrobe = prompt("Du ser en trappa. Du går upp på övervåningen. Där uppe i ett av rummen ser du en garderob. Vill du öppna den? Ange ja eller nej.")
+    
+    if (openWardrobe === "ja") {
+        alert("Där ligger svärdet! Du har hittat det. Nu saknas bara skölden.")
+        inventory.push("Svärd")
+        let whereNext = prompt("Vart vill du gå nu? Ange fight för att gå och bekämpa monstret eller grottan för att gå till grottan")
+
+        if (whereNext === "grottan"){
+            goToCaveSecondTime();
+        }
+        else if (whereNext === "fight") {
+            alert("Oops, du har ju inte skölden än... Du måste hämta den först. Klicka ok för att gå till grottan.")
+            goToCaveSecondTime();
+        }
+        else {
+            alert("Vänligen ange fight eller grottan")
+            upstairsSecondTime()
+        }
+        
+    }
+    else if(openWardrobe === "nej") {
+        alert("Gubben kommer upp till dig på övervåningen. Han sa att han minns nu var han lagt svärdet. Det ligger i garderoben säger han och öppnar den. Han ger dig svärdet. Nu behöver du bara skölden.")
+        inventory.push("Svärd")
+        let whereNext = prompt("Vart vill du gå nu? Ange fight för att gå och bekämpa monstret eller grottan för att gå till grottan")
+
+        if (whereNext === "grottan"){
+            goToCaveSecondTime();
+        }
+        else if (whereNext === "fight") {
+            alert("Oops, du har ju inte skölden än... Du måste hämta den först. Klicka ok för att gå till grottan.")
+            goToCaveSecondTime()
+        }
+        else {
+            alert("Vänligen ange fight eller grottan")
+            upstairsSecondTime()
+        }
+
+    }
+    else {
+        alert("Vänligen ange ja eller nej")
+        upstairsSecondTime()
     }
     
 }
 
 function cave() {
-        alert("Det är mörkt och kallt när du beger dig in i grottan, men som tur har har du en ficklampa med dig. Du går allt längre in i grottan. Det är läskigt och du ser fladdermöss flyga omkring där inne.")
-        alert("Plötsligt ser du en staty mitt inne i grottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden...")
+        alert("Det är mörkt och kallt när du beger dig in i grottan.")
+        alert("Plötsligt ser du en staty mitt inne i gottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden...")
         alert("Du går besviket ut ur grottan igen. Du måste hitta svärdet. Du går till skogen.")
-        forest();
+        forestSecondTime();
     }
-    function forest() {
+    function forestSecondTime() {
             alert("Du går in i skogen. Du ser ett hus framför dig. Du knackar på dörren.")
             alert("En gubbe öppnar. Han frågar vad du vill och du svarar att du letar efter ett svärd och en sköld. Gubben säger att han nog har ett svärd hemma men han minns inte vart han lagt det... Du kan gärna leta här inne säger han.")
-            insideHouse();
+            insideHouseSecondTime();
     }
 
-    function goToCave() {
+    function goToCaveFirstTime() {
         inventory.push("Sköld")
-        alert("Du går till grottan. Plötsligt ser du en staty mitt inne i grottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden... Som tur är har du hittat svärdet så du använder det för att skära i trät och du har nu skölden också.")
+        alert("Du går till grottan. Det är mörkt och kallt där inne och fladdermöss flyger omkring. Mitt i grottan ser du ett ljus. Det är en lykta. Brevid lyktan står en staty av en riddare gjord i trä. Riddaren håller i en sköld. Som tur är har du hittat svärdet så du använder det för att skära i trät och du har nu skölden också.")
         let collectedAll = prompt("Det är dags att bege dig mot monstret. Ange inventory för att dubbelkolla att du har allt du behöver.")
         if (collectedAll === "inventory") {
             alert(inventory)
@@ -111,7 +176,21 @@ function cave() {
         }
         else {
             alert("Vänligen dubbelkolla att du har alla föremål du behöver")
-            goToCave();
+            goToCaveFirstTime();
+        }
+    }
+
+    function goToCaveSecondTime() {
+        inventory.push("Sköld")
+        alert("Du går till grottan. Du ser statyn igen. Som tur är har du hittat svärdet så du använder det för att skära i trät och du har nu skölden också.")
+        let collectedAll = prompt("Det är dags att bege dig mot monstret. Ange inventory för att dubbelkolla att du har allt du behöver.")
+        if (collectedAll === "inventory") {
+            alert(inventory)
+            monsterFight()
+        }
+        else {
+            alert("Vänligen dubbelkolla att du har alla föremål du behöver")
+            goToCaveSecondTime();
         }
     }
 
