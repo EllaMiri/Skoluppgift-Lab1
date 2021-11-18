@@ -78,6 +78,7 @@ function upstairsFirstTime() {
             goToCaveFirstTime();
         }
         else {
+            inventory.pop()
             alert("Vänligen ange fight eller grottan")
             upstairsFirstTime()
         }
@@ -96,6 +97,7 @@ function upstairsFirstTime() {
             goToCaveFirstTime()
         }
         else {
+            inventory.pop()
             alert("Vänligen ange fight eller grottan")
             upstairsFirstTime()
         }
@@ -124,6 +126,7 @@ function upstairsSecondTime() {
             goToCaveSecondTime();
         }
         else {
+            inventory.pop()
             alert("Vänligen ange fight eller grottan")
             upstairsSecondTime()
         }
@@ -142,6 +145,7 @@ function upstairsSecondTime() {
             goToCaveSecondTime()
         }
         else {
+            inventory.pop()
             alert("Vänligen ange fight eller grottan")
             upstairsSecondTime()
         }
@@ -175,6 +179,7 @@ function cave() {
             monsterFight()
         }
         else {
+            inventory.pop()
             alert("Vänligen dubbelkolla att du har alla föremål du behöver")
             goToCaveFirstTime();
         }
@@ -189,6 +194,7 @@ function cave() {
             monsterFight()
         }
         else {
+            inventory.pop()
             alert("Vänligen dubbelkolla att du har alla föremål du behöver")
             goToCaveSecondTime();
         }
@@ -203,6 +209,7 @@ function cave() {
         }
         else {
             alert("Vänligen ange slå")
+            monsterFight()
         }
     }
     
@@ -255,10 +262,14 @@ function cave() {
             alert("Monstret tittar ledset på dig. Monstret säger att han borde bege sig tillbaka till Goodbye World. Monstret fäller ut sina vingar och flyger iväg.")
             alert("GRATTIS DU HAR BEKÄMPAT MONSTRET OCH KLARAT SPELET!")
         }
-        reloadPage();
+        else {
+            alert("Vänligen ange ja eller nej")
+            friendlyMonster()
+        }
+        clearInventory();
     }
 
-    function reloadPage() {
-        location.reload()
-
+    function clearInventory() {
+        inventory.pop()
+        inventory.pop()
     }
