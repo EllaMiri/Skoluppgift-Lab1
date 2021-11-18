@@ -156,7 +156,7 @@ function upstairsSecondTime() {
 
 function cave() {
         alert("Det är mörkt och kallt när du beger dig in i grottan.")
-        alert("Plötsligt ser du en staty mitt inne i gottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden...")
+        alert("Plötsligt ser du en staty mitt inne i grottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden...")
         alert("Du går besviket ut ur grottan igen. Du måste hitta svärdet. Du går till skogen.")
         forestSecondTime();
     }
@@ -255,4 +255,10 @@ function cave() {
             alert("Monstret tittar ledset på dig. Monstret säger att han borde bege sig tillbaka till Goodbye World. Monstret fäller ut sina vingar och flyger iväg.")
             alert("GRATTIS DU HAR BEKÄMPAT MONSTRET OCH KLARAT SPELET!")
         }
+        reloadPage();
+    }
+
+    function reloadPage() {
+        location.reload()
+
     }
