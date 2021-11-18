@@ -68,12 +68,38 @@ function upstairsFirstTime() {
     if (openWardrobe === "ja") {
         alert("Där ligger svärdet! Du har hittat det. Nu saknas bara skölden.")
         inventory.push("Svärd")
-        fightOrCave()
+        let whereNext = prompt("Vart vill du gå nu? Ange fight för att gå och bekämpa monstret eller grottan för att gå till grottan")
+
+        if (whereNext === "grottan"){
+            goToCaveFirstTime();
+        }
+        else if (whereNext === "fight") {
+            alert("Oops, du har ju inte skölden än... Du måste hämta den först. Klicka ok för att gå till grottan.")
+            goToCaveFirstTime();
+        }
+        else {
+            alert("Vänligen ange fight eller grottan")
+            upstairsFirstTime()
+        }
+        
     }
     else if(openWardrobe === "nej") {
         alert("Gubben kommer upp till dig på övervåningen. Han sa att han minns nu var han lagt svärdet. Det ligger i garderoben säger han och öppnar den. Han ger dig svärdet. Nu behöver du bara skölden.")
         inventory.push("Svärd")
-        fightOrCave()
+        let whereNext = prompt("Vart vill du gå nu? Ange fight för att gå och bekämpa monstret eller grottan för att gå till grottan")
+
+        if (whereNext === "grottan"){
+            goToCaveFirstTime();
+        }
+        else if (whereNext === "fight") {
+            alert("Oops, du har ju inte skölden än... Du måste hämta den först. Klicka ok för att gå till grottan.")
+            goToCaveFirstTime()
+        }
+        else {
+            alert("Vänligen ange fight eller grottan")
+            upstairsFirstTime()
+        }
+
     }
     else {
         alert("Vänligen ange ja eller nej")
@@ -230,22 +256,6 @@ function cave() {
             alert("GRATTIS DU HAR BEKÄMPAT MONSTRET OCH KLARAT SPELET!")
         }
         reloadPage();
-    }
-
-    function fightOrCave() {
-        let whereNext = prompt("Vart vill du gå nu? Ange fight för att gå och bekämpa monstret eller grottan för att gå till grottan")
-
-        if (whereNext === "grottan"){
-            goToCaveFirstTime();
-        }
-        else if (whereNext === "fight") {
-            alert("Oops, du har ju inte skölden än... Du måste hämta den först. Klicka ok för att gå till grottan.")
-            goToCaveFirstTime();
-        }
-        else {
-            alert("Vänligen ange fight eller grottan")
-            fightOrCave();
-        }
     }
 
     function reloadPage() {
