@@ -84,11 +84,11 @@ function goToCaveFirstTime() {
 function cave() {
     alert("Det är mörkt och kallt när du beger dig in i grottan.")
     alert("Plötsligt ser du en staty mitt inne i grottan. Statyn är en riddare gjord i trä. Riddaren håller i en sköld! Du tar en närmare titt. Skölden sitter stenhårt, du behöver svärdet för att kunna skära trät och ta ner skölden...")
-    alert("Du går besviket ut ur grottan igen. Du måste hitta svärdet. Du går till skogen.")
+    alert("Du går besviket ut ur grottan igen. Du måste hitta svärdet så du går in i skogen.")
     forestSecondTime();
 }
 function forestSecondTime() {
-        alert("Du går in i skogen. Du ser ett hus framför dig. Du knackar på dörren.")
+        alert("Du ser ett hus framför dig. Du knackar på dörren.")
         alert("En gubbe öppnar. Han frågar vad du vill och du svarar att du letar efter ett svärd och en sköld. Gubben säger att han nog har ett svärd hemma men han minns inte vart han lagt det... Du kan gärna leta här inne säger han.")
         insideHouseSecondTime();
 }
