@@ -39,15 +39,16 @@ function insideHouseFirstTime() {
     let openChest = prompt("I hallen ser du en kista. Vill du öppna den? Ange ja eller nej").toLowerCase();
     if (openChest === "ja") {
         alert("Kistan är tom.. Leta vidare")
+        upstairsFirstTime()
     }
-    else if (openChest === "nej"){
+    else if (openChest === "nej") {
         alert("Du letar vidare")
+        upstairsFirstTime()
     }
     else {
         alert("Vänligen ange ja eller nej")
         insideHouseFirstTime()
     }
-    upstairsFirstTime()
 }
 
 function upstairsFirstTime() {
@@ -96,15 +97,16 @@ function insideHouseSecondTime() {
     let openChest = prompt("I hallen ser du en kista. Vill du öppna den? Ange ja eller nej").toLowerCase();
     if (openChest === "ja") {
         alert("Kistan är tom.. Leta vidare")
+        upstairsSecondTime()
     }
     else if (openChest === "nej"){
         alert("Du letar vidare")
+        upstairsSecondTime()
     }
     else {
         alert("Vänligen ange ja eller nej")
         insideHouseSecondTime()
     }
-    upstairsSecondTime()
 }
 
 function upstairsSecondTime() {
@@ -116,7 +118,7 @@ function upstairsSecondTime() {
         fightOrCave();
         
     }
-    else if(openWardrobe === "nej") {
+    else if (openWardrobe === "nej") {
         alert("Gubben kommer upp till dig på övervåningen. Han sa att han minns nu var han lagt svärdet. Det ligger i garderoben säger han och öppnar den. Han ger dig svärdet. Nu behöver du bara skölden.")
         inventory.push("Svärd")
         fightOrCave();
@@ -204,12 +206,15 @@ function upstairsSecondTime() {
             friendlyMonster()
         }
         clearInventory();
+        
     }
-
+    
+   
     /** Clears the inventory so that if the user starts game again the inventory is empty */
     function clearInventory() {
-        inventory.pop()
-        inventory.pop()
+        while (inventory != 0) {
+            inventory.pop()
+        }
     }
 
     /** Function that handles the choice of where the user wants to go next after they've been upstairs */
